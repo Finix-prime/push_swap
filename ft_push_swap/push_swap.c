@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:33:07 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 17:01:31 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:49:10 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	assign(t_stack *stk, char **tmp, int j, int k)
 {
-	// if (!(ft_atoi(tmp[k])))
-	// 	return (0);
 	stk->r[j] = ft_atoi(tmp[k]);
 	if (stk->r[j] > stk->max)
 		stk->max = stk->r[j];
@@ -24,7 +22,7 @@ int	assign(t_stack *stk, char **tmp, int j, int k)
 	return (1);
 }
 
-void	init(t_stack *stk, int ac, char **av)
+int	init(t_stack *stk, int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -42,16 +40,14 @@ void	init(t_stack *stk, int ac, char **av)
 		while (tmp[k])
 		{
 			if (!(assign(stk, tmp, j, k)))
-			{
-				ft_printf("Error\n");
-				return ;
-			}
+				return (0);
 			j++;
 			k++;
 		}
 		i++;
 	}
 	stk->end = j;
+	return (1);
 }
 
 int	errorhandling(t_stack *stk)

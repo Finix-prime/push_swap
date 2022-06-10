@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:22 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 15:07:15 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:12:40 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ int		sort(t_stack *a, t_stack *b);
 int		sortstack(t_stack *a, t_stack *b);
 int		errorhandling(t_stack *stk);
 int		assign(t_stack *stk, char **tmp, int j, int k);
+int		init(t_stack *stk, int ac, char **av);
 void	printstk(t_stack *stk);
 void	mvup(t_stack *stk);
 void	mvdown(t_stack *stk);
 void	marker(t_stack *stk);
-void	init(t_stack *stk, int ac, char **av);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t maxlen);
