@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilis.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:39:08 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 13:43:14 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:01:10 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	printstk(t_stack *stk)
 	int		i;
 
 	i = stk->start;
+	ft_printf("stack %c\n", stk->name);
 	while (i < stk->end)
 	{
 		ft_printf("slot %d = %d\n", i, stk->r[i]);

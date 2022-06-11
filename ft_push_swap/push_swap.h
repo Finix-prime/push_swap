@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:22 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/10 16:12:40 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:25:22 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,16 @@ int		sortstack(t_stack *a, t_stack *b);
 int		errorhandling(t_stack *stk);
 int		assign(t_stack *stk, char **tmp, int j, int k);
 int		init(t_stack *stk, int ac, char **av);
+int		check5(t_stack *stk);
+int		sort5(t_stack *a, t_stack *b);
+int		cases(t_stack *a, t_stack *b);
+int		pullb(t_stack *a, t_stack *b);
+int		case1(t_stack *a, t_stack *b);
+int		case2(t_stack *a, t_stack *b);
+int		case3(t_stack *a, t_stack *b);
+int		case4(t_stack *a, t_stack *b);
+int		case5(t_stack *a, t_stack *b);
+int		wherenum(t_stack *stk, int x);
 void	printstk(t_stack *stk);
 void	mvup(t_stack *stk);
 void	mvdown(t_stack *stk);

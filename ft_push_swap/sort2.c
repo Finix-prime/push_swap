@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:10:16 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 16:53:12 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:38:24 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,33 @@ int	sortstack(t_stack *a, t_stack *b)
 
 	count = 0;
 	marker(a);
-	count += deck1(a, b);
-	count += deck2(a, b);
-	count += deck3(a, b);
-	count += deck4(a, b);
-	count += deck5(a, b);
-	count += sort(a, b);
+	if (a->end == 5)
+		count = sort5(a, b);
+	else
+	{
+		count += deck1(a, b);
+		count += deck2(a, b);
+		count += deck3(a, b);
+		count += deck4(a, b);
+		count += deck5(a, b);
+		count += sort(a, b);
+	}
+	return (count);
+}
+
+int	sort5(t_stack *a, t_stack *b)
+{
+	int	count;
+	int	i;
+	int	x;
+
+	i = 0;
+	count = 0;
+	x = 0;
+	x = wherenum(a, a->max);
+	count += kick2(a, b, x);
+	x = wherenum(a, a->min);
+	count += kick2(a, b, x);
+	count += cases(a, b);
 	return (count);
 }
