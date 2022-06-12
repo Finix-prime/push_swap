@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:49:03 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 15:31:16 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:33:51 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_isalpha(int c)
 
 void	error(void)
 {
-		ft_printf("Error\n");
-		exit(0);
+	ft_printf("Error\n");
+	exit(0);
 }
 
 void	marker10(t_stack *stk)
