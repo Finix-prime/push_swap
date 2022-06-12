@@ -6,11 +6,23 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:49:03 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 14:36:49 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:31:16 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		error();
+}
+
+void	error(void)
+{
+		ft_printf("Error\n");
+		exit(0);
+}
 
 void	marker10(t_stack *stk)
 {

@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:22 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 14:06:30 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:29:19 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int		case4(t_stack *a, t_stack *b);
 int		case5(t_stack *a, t_stack *b);
 int		wherenum(t_stack *stk, int x);
 int		deck10(t_stack *a, t_stack *b);
+void	error(void);
+void	ft_isalpha(int c);
 void	marker10(t_stack *stk);
 void	printstk(t_stack *stk);
 void	mvup(t_stack *stk);

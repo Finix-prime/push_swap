@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:33:07 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 14:54:32 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:30:40 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	assign(t_stack *stk, char **tmp, int j, int k)
 {
+	ft_isalpha(*tmp[k]);
 	stk->r[j] = ft_atoi(tmp[k]);
 	if (stk->r[j] > stk->max)
 		stk->max = stk->r[j];
@@ -70,10 +71,7 @@ int	errorhandling(t_stack *stk)
 			i++;
 		}
 		if (n > 1)
-		{
-			ft_printf("Error\n");
-			return (0);
-		}
+			error();
 		j++;
 	}
 	return (1);
@@ -94,7 +92,8 @@ int	main(int ac, char **av)
 		return (0);
 	sta = setstack(sta, 'a');
 	stb = setstack(stb, 'b');
-	init(sta, ac, av);
+	if (ac > 1)
+		init(sta, ac, av);
 	if (errorhandling(sta) == 0)
 		return (0);
 	count = sortstack(sta, stb);

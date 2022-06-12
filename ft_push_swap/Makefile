@@ -6,7 +6,7 @@
 #    By: pmethira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 12:41:12 by pmethira          #+#    #+#              #
-#    Updated: 2022/06/12 14:47:32 by pmethira         ###   ########.fr        #
+#    Updated: 2022/06/12 15:10:27 by pmethira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ fclean:	clean
 	@rm -rf $(NAMES)
 	@rm -rf $(PROGRAME)
 	@rm -rf *.a
+
+re: fclean all
 
 norm:
 	@norminette -R CheckForbiddenSourceHeader
