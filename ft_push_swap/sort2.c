@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:10:16 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/11 19:38:24 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:23:22 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,19 @@ int	sortstack(t_stack *a, t_stack *b)
 	marker(a);
 	if (a->end == 5)
 		count = sort5(a, b);
-	else
+	else if (a->end < 300)
 	{
 		count += deck1(a, b);
 		count += deck2(a, b);
 		count += deck3(a, b);
 		count += deck4(a, b);
 		count += deck5(a, b);
+		count += sort(a, b);
+	}
+	else
+	{
+		marker10(a);
+		count += deck10(a, b);
 		count += sort(a, b);
 	}
 	return (count);

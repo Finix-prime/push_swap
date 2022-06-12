@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilis2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:14 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 15:52:02 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 13:51:54 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 t_stack	*setstack(t_stack *a, char n)
 {
+	int	i;
+
+	i = 0;
 	a->start = 0;
 	a->end = 0;
 	a->max = 0;
 	a->min = 0;
 	a->at[0] = 0;
 	a->at[1] = 0;
-	a->mark[0] = 0;
-	a->mark[1] = 0;
-	a->mark[2] = 0;
-	a->mark[3] = 0;
-	a->mark[4] = 0;
-	a->mark[5] = 0;
 	a->name = n;
 	a->check = 0;
+	while (i < 20)
+	{
+		a->mark[i] = 0;
+		i++;
+	}
 	return (a);
 }
 
