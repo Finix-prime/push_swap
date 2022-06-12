@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:33:07 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 14:42:17 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:54:32 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int	main(int ac, char **av)
 	init(sta, ac, av);
 	if (errorhandling(sta) == 0)
 		return (0);
-	count = sortstack(sta, stb);
 	count = sortstack(sta, stb);
 	free(sta);
 	free(stb);

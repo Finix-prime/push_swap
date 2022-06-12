@@ -6,7 +6,7 @@
 #    By: pmethira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 12:41:12 by pmethira          #+#    #+#              #
-#    Updated: 2022/06/12 14:21:16 by pmethira         ###   ########.fr        #
+#    Updated: 2022/06/12 14:47:32 by pmethira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ HEAD = push_swap.h
 # exe = ARG=`ruby -e "puts (1..40).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
 exe = ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $$ARG; echo $$ARG >> test.txt
 
-exe5 = ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $$ARG; echo $$ARG >> test.txt
-exe100 = ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $$ARG; echo $$ARG >> test.txt
-exe500 = ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $$ARG; echo $$ARG >> test.txt
+exe5 = ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
+exe100 = ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
+exe500 = ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
 SRCS = ft_eval.c ft_print_address.c ft_print_hex.c ft_print_num.c ft_print_unsigned.c ft_print_utilis.c ft_printf.c
 OBJS = $(SRCS:%.c=%.o)
 
