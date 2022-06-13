@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:33:07 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 09:46:42 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:34:47 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,43 +75,4 @@ int	errorhandling(t_stack *stk)
 		j++;
 	}
 	return (1);
-}
-
-int	main(int ac, char **av)
-{
-	t_stack	*sta;
-	t_stack	*stb;
-	int		count;
-
-	count = 0;
-	sta = (t_stack *)malloc(sizeof(t_stack));
-	if (!sta)
-		return (0);
-	stb = (t_stack *)malloc(sizeof(t_stack));
-	if (!stb)
-		return (0);
-	sta = setstack(sta, 'a');
-	stb = setstack(stb, 'b');
-	if (ac > 1)
-		init(sta, ac, av);
-	if (errorhandling(sta) == 0)
-		return (0);
-	count = sortstack(sta, stb);
-	// marker(sta);
-	// for (int i = 0; i < 5; i++)
-	// {
-	// 	ft_printf("mark[%d] = %d\n", i, sta->mark[i]);
-	// }
-	// count += deck5(sta, stb);
-	// count += deck4(sta, stb);
-	// count += deck3(sta, stb);
-	// count += deck2(sta, stb);
-	// count += deck1(sta, stb);
-	// count += sort(a, b);
-	// printstk(sta);
-	// printstk(stb);
-	// ft_printf("count operatiin = %d\n", count);
-	free(sta);
-	free(stb);
-	return (0);
 }

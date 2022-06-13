@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:10:16 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 09:45:34 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:37:05 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	kick(t_stack *a, t_stack *b, int x, int mean)
 		else
 			count += rev_rotate(a);
 	}
-	a->at[0] = 0;
-	a->at[1] = 0;
 	if (a->r[0] > mean)
 		count += atob(a, b);
 	else if (a->r[0] > mean && b->end > 1)
