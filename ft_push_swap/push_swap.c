@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:33:07 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 15:30:40 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/13 09:46:42 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,20 @@ int	main(int ac, char **av)
 	if (errorhandling(sta) == 0)
 		return (0);
 	count = sortstack(sta, stb);
+	// marker(sta);
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 	ft_printf("mark[%d] = %d\n", i, sta->mark[i]);
+	// }
+	// count += deck5(sta, stb);
+	// count += deck4(sta, stb);
+	// count += deck3(sta, stb);
+	// count += deck2(sta, stb);
+	// count += deck1(sta, stb);
+	// count += sort(a, b);
+	// printstk(sta);
+	// printstk(stb);
+	// ft_printf("count operatiin = %d\n", count);
 	free(sta);
 	free(stb);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:10:16 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 14:45:41 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/13 09:45:34 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	kick(t_stack *a, t_stack *b, int x, int mean)
 	int	count;
 
 	count = 0;
-	while (a->r[0] != x && a->end > 0)
+	while (a->r[0] != x && a->end > 1)
 	{
 		if (a->at[0] == 1)
 			count += rotate(a);
@@ -65,8 +65,6 @@ int	sort(t_stack *a, t_stack *b)
 	while (b->end - b->start > 0)
 	{
 		x = pcheck2(b);
-		if (x == 0)
-			x = ffmin(b);
 		count += kick2(b, a, x);
 	}
 	return (count);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:07:11 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/08 16:39:48 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:56:19 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	deck1(t_stack *a, t_stack *b)
 	while (eval(a, v) != 0 && a->end > 0)
 	{
 		x = pcheck(a, v);
-		if (x == 0)
-			x = ffmin(a);
 		count += kick(a, b, x, means);
 	}
 	return (count);
@@ -45,8 +43,6 @@ int	deck2(t_stack *a, t_stack *b)
 	while (eval(a, v) != 0 && a->end > 0)
 	{
 		x = pcheck(a, v);
-		if (x == 0)
-			x = ffmin(a);
 		count += kick(a, b, x, means);
 	}
 	return (count);
@@ -65,8 +61,6 @@ int	deck3(t_stack *a, t_stack *b)
 	while (eval(a, v) != 0 && a->end > 0)
 	{
 		x = pcheck(a, v);
-		if (x == 0)
-			x = ffmin(a);
 		count += kick(a, b, x, means);
 	}
 	return (count);
@@ -85,8 +79,6 @@ int	deck4(t_stack *a, t_stack *b)
 	while (eval(a, v) != 0 && a->end > 0)
 	{
 		x = pcheck(a, v);
-		if (x == 0)
-			x = ffmin(a);
 		count += kick(a, b, x, means);
 	}
 	return (count);

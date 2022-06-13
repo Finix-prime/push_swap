@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:49:03 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/12 15:33:51 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/13 09:48:19 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,12 @@ int	deck10(t_stack *a, t_stack *b)
 
 	count = 0;
 	i = 1;
-	marker10(a);
 	while (i < 11 && a->end > 0)
 	{
 		while (eval(a, a->mark[i]) != 0 && a->end > 0)
 		{
 			means = mean(a, i);
 			x = pcheck(a, a->mark[i]);
-			if (x == 0)
-				x = ffmin(a);
 			count += kick(a, b, x, means);
 		}
 		i++;
