@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   my_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:50:16 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 16:35:06 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:52:05 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <fcntl.h>
-
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
-// 	i = 0;
-// 	while (str[i])
-// 		i++;
-// 	return (i);
-// }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -41,7 +32,24 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-void	find(t_stack *c1, t_stack *c2,char *str, int n)
+void	stackcheck(t_stack *stk)
+{
+	int	i;
+
+	i = stk->start;
+	while (i < stk->end - 1)
+	{
+		if (stk->r[i] > stk->r[i + 1])
+		{
+			ft_printf("KO\n");
+			return ;
+		}
+		i++;
+	}
+	ft_printf("OK\n");
+}
+
+void	find(t_stack *c1, t_stack *c2, char *str, int n)
 {
 	if (!ft_strncmp("sa", str, n))
 		swap(c1);
@@ -59,27 +67,31 @@ void	find(t_stack *c1, t_stack *c2,char *str, int n)
 		atob(c1, c2);
 	else if (!ft_strncmp("pa", str, n))
 		atob(c2, c1);
-	printstk(c1);
 }
 
 void	readline(t_stack *c1, t_stack *c2)
 {
-	char *str;
-	char *buf;
+	char	*str;
+	char	*buf;
+	int		i;
 
-	str = (char *)malloc(sizeof(char) * 100);
-	if (!str)
-		return ;
+	i = 0;
 	buf = (char *)malloc(sizeof(char) * 100);
 	if (!buf)
 		return ;
+	str = (char *)malloc(sizeof(char) * 100);
+	if (!str)
+		return ;
 	while (read(0, buf, 1) > 0)
 	{
+		str[i] = *buf;
+		i++;
 		if (*buf == '\n')
-			break ;
-		*str = *buf;
+		{
+			find(c1, c2, str, ft_len(str));
+			i = 0;
+		}
 	}
-	find(c1, c2,str, ft_strlen(str));
 	free(str);
 	free(buf);
 }
@@ -95,12 +107,13 @@ int	main(int ac, char **av)
 	c2 = (t_stack *)malloc(sizeof(t_stack));
 	if (!c2)
 		return (0);
-	c1 = setstack(c1, '1');
-	c2 = setstack(c2, '2');
+	c1 = setstack(c1, 'x');
+	c2 = setstack(c2, 'y');
 	if (ac > 1)
 		init(c1, ac, av);
 	if (errorhandling(c1) == 0)
 		return (0);
 	readline(c1, c2);
+	stackcheck(c1);
 	return (0);
 }

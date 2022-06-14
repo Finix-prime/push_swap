@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:49:03 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 09:48:19 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:06:44 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	marker10(t_stack *stk)
 	stk->mark[7] = findex(stk, 30);
 	stk->mark[8] = findex(stk, 20);
 	stk->mark[9] = findex(stk, 10);
-	stk->mark[10] = ffmin(stk);
+	stk->mark[20] = ffmin(stk);
 }
 
 int	deck10(t_stack *a, t_stack *b)
@@ -48,7 +48,7 @@ int	deck10(t_stack *a, t_stack *b)
 
 	count = 0;
 	i = 1;
-	while (i < 11 && a->end > 0)
+	while (a->end > 0)
 	{
 		while (eval(a, a->mark[i]) != 0 && a->end > 0)
 		{

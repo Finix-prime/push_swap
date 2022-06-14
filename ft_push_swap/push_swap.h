@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmethira <pmethira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:22 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 16:25:34 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:45:18 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct l_list
 	int		max;
 	int		min;
 	int		at[2];
-	int		mark[20];
+	int		mark[30];
 	int		check;
 }	t_stack;
 
@@ -51,7 +51,7 @@ typedef struct s_print
 t_stack	*setstack(t_stack *a, char n);
 char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *str);
-int		len(char *s);
+int		ft_len(char *s);
 int		ffmax(t_stack *stk);
 int		findex(t_stack *stk, int percent);
 int		ffmin(t_stack *stk);
@@ -86,6 +86,10 @@ int		case4(t_stack *a, t_stack *b);
 int		case5(t_stack *a, t_stack *b);
 int		wherenum(t_stack *stk, int x);
 int		deck10(t_stack *a, t_stack *b);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	readline(t_stack *c1, t_stack *c2);
+void	find(t_stack *c1, t_stack *c2, char *str, int n);
+void	stackcheck(t_stack *stk);
 void	error(void);
 void	ft_isalpha(int c);
 void	marker10(t_stack *stk);

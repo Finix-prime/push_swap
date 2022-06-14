@@ -6,7 +6,7 @@
 #    By: pmethira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 12:41:12 by pmethira          #+#    #+#              #
-#    Updated: 2022/06/13 17:19:33 by pmethira         ###   ########.fr        #
+#    Updated: 2022/06/14 14:49:11 by pmethira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ HEAD = push_swap.h
 
 exe = ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`; echo $$ARG >> test.txt; ./push_swap $$ARG
 checker = ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; echo $$ARG >> test.txt; ./push_swap $$ARG | ./checker $$ARG
+my_checker = ./push_swap $$ARG | ./my_checker $$ARG
 exe5 = ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
 exe100 = ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
 exe500 = ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | wc -l; echo $$ARG >> test.txt
@@ -71,5 +72,9 @@ norm:
 test:
 	@$(exe)
 
-.PHONY:		all clean fclean re norm my_checker
+checker:
+	$(checker)
+	$(my_checker)
+
+.PHONY:		all clean fclean re norm my_checker checker
 

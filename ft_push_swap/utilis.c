@@ -6,18 +6,18 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:39:08 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/11 13:01:10 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:50:14 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	len(char *s)
+int	ft_len(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i] != '\0' && str[i] != '\n')
 		i++;
 	return (i);
 }

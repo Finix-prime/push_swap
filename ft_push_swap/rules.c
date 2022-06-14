@@ -6,7 +6,7 @@
 /*   By: pmethira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:02:06 by pmethira          #+#    #+#             */
-/*   Updated: 2022/06/13 09:47:50 by pmethira         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:52:57 by pmethira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int	atob(t_stack *a, t_stack *b)
 	b->min = ffmin(b);
 	a->max = ffmax(a);
 	a->min = ffmin(a);
-	ft_printf("p%c\n", b->name);
+	if ((a->name == 'a' || a->name == 'b')
+		&& (b->name == 'a' || b->name == 'b'))
+		ft_printf("p%c\n", b->name);
 	return (1);
 }
 
@@ -41,7 +43,8 @@ int	swap(t_stack *stk)
 	tmp = stk->r[0];
 	stk->r[0] = stk->r[1];
 	stk->r[1] = tmp;
-	ft_printf("s%c\n", stk->name);
+	if (stk->name == 'a' || stk->name == 'b')
+		ft_printf("s%c\n", stk->name);
 	return (1);
 }
 
@@ -53,7 +56,8 @@ int	rotate(t_stack *stk)
 	mvup(stk);
 	stk->end++;
 	stk->r[stk->end - 1] = tmp;
-	ft_printf("r%c\n", stk->name);
+	if (stk->name == 'a' || stk->name == 'b')
+		ft_printf("r%c\n", stk->name);
 	return (1);
 }
 
@@ -65,7 +69,8 @@ int	rev_rotate(t_stack *stk)
 	mvdown(stk);
 	stk->r[stk->start] = tmp;
 	stk->end--;
-	ft_printf("rr%c\n", stk->name);
+	if (stk->name == 'a' || stk->name == 'b')
+		ft_printf("rr%c\n", stk->name);
 	return (1);
 }
 
